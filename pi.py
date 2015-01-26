@@ -11,6 +11,7 @@ def arctan(x, n):
     return summa
 
 # zeta(2) = pi/6
+# http://en.wikipedia.org/wiki/Riemann_zeta_function#Specific_values
 def zeta_function(z, n):
     summa = 0
     for i in range(1, n+1):
@@ -18,7 +19,10 @@ def zeta_function(z, n):
 
     return summa
 
-# riemann sum of half circle equation of radius 1 is equal to pi/2
+# riemann sum of half circle equation of radius 1 is equal to pi/2, after solving for y in 
+# y^2 + x^2 = 1 (radius squared)
+# http://en.wikipedia.org/wiki/Riemann_sum
+# http://en.wikipedia.org/wiki/List_of_formulae_involving_%CF%80#Integrals
 def riemann_sum(a, b, n):
     def f(x):   return sqrt(1-x**2)
 
