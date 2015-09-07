@@ -11,18 +11,13 @@ def e_taylor(n, x):
 		summa += 1/factorial(i)
 	return summa
 
+e_taylor = e_taylor(10, 1)
+limit_e = limit_e(1000000)
 
-# First example problem?
-def bacteria_growth(deltat, t, r, n):
-	history = []
-	time = 0
-	while time < t:
-		time += deltat
-		history.append(1/(1+exp(-r*time/n)))
-	
-	return history
+print('\n\n')
+print("Approximation to e^1 using a Taylor series with 10 sum elements:", e_taylor, '\n', 
+	"Error of this approximation is:", abs(e_taylor - e), '\n')
 
-
-print(e_taylor(100, 1))
-print(limit_e(1000))
-print(bacteria_growth(1, 100, 1, 10000))
+print("Approximation to e using limit definition using n = 1 000 000:", limit_e, '\n',
+	"Error of this approximation is:", abs(limit_e - e))
+print('\n\n')

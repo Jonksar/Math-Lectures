@@ -12,6 +12,7 @@ def arctan(x, n):
 
 # zeta(2) = pi/6
 # http://en.wikipedia.org/wiki/Riemann_zeta_function#Specific_values
+# Show Euler derivation of this! It is awesome! Also known as Basel problem.
 def zeta_function(z, n):
     summa = 0
     for i in range(1, n+1):
@@ -35,6 +36,17 @@ def riemann_sum(a, b, n):
 
     return summa
 
-#print(riemann_sum(-1 ,1, 1000000), pi/2)
-print(zeta_function(2, 1000), pi**2/6)
-#print(arctan(1,100000), pi/4)
+
+pi_over_two = riemann_sum(-1, 1, 1000000)
+print("\n\nNumerical calculation of integral under half circle with 1 000 000 rectangles:", pi_over_two, '\n',
+	"Gives us pi of value:", pi_over_two * 2, "with error:", abs(pi_over_two * 2 - pi), '\n')
+
+
+zeta_of_2 = zeta_function(2, 1000)
+print("Numerical calculation of zeta(2) with 1000 sum elements, gives value of pi^2/6:", zeta_of_2, '\n',
+	"Gives us value of pi:", sqrt(zeta_of_2 * 6), "with error of:", abs(pi - sqrt(zeta_of_2 * 6)), '\n')
+
+arctan_1 = arctan(1, 100000)
+print("Arctan Taylor series evaluated at 1 with 100 000 sum elements gives us value of", arctan_1, '\n'
+	"Gives us pi value of:", arctan_1 * 4, "with error of:", abs(arctan_1 * 4 - Decimal(pi)), '\n')
+print("Error is due to VERY slow convergance\n\n")

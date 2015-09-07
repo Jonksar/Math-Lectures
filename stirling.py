@@ -5,5 +5,7 @@ from math import factorial, sqrt, pi, e
 
 def stirling(t):
 	return sqrt(2*pi*t)*(t/e)**t
-	
-print(stirling(100), factorial(100)*1.0)
+
+s = stirling(100)
+f = factorial(100) * 1.0
+print("\n\nStirling approximation to 100! is:", s, "Compared to exact value of:", f, '\nThe error is:', f - s, "\nWhich is only:", ((f - s) / f) * 100, "%\n\n")
